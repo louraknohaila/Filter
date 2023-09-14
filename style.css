@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+body {
+    background: linear-gradient(to right, #ffffff, #000000); /* Dégradé de blanc à noir */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: linear-gradient(to right, #ffffff, #808080); /* Dégradé de blanc à gris */
+    width: 80vw;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Ombre */
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.img img,
+canvas {
+    max-width: 65vw;
+    max-height: 80vh;
+}
+
+.upload {
+    position: relative;
+}
+
+.upload input {
+    display: none;
+}
+
+.pi {
+    position: relative;
+    top: 13px;
+}
+
+.upload label {
+    color: #000000;
+    padding: 8px 20px;
+    border: 2px #000000 dashed;
+    cursor: pointer;
+    animation: rotateDashed 0.5s linear infinite;
+}
+
+@keyframes rotateDashed {
+    0% {
+        border-style: dashed; /* Bordure dashed au début de l'animation */
+    }
+    50% {
+        border-style: solid; /* Changement en bordure solid à 50% de l'animation */
+    }
+    100% {
+        border-style: dashed; /* Retour à la bordure dashed à la fin de l'animation */
+    }
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
+.filters h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.filters ul,
+.filters ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    direction: rtl;
+}
+
+.filters ul li label {
+    color: #000000;
+}
+
+.filters ul li:last-child {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.filters ul li a,
+span {
+    color: #fff;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #d8d6d6, #515151); /* Dégradé de blanc à gris */
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ombre sur les boutons */
+}
+
+.filters ul li a:hover,
+span:hover {
+    background: linear-gradient(to right, #515151, #dedddd); /* Dégradé de gris à blanc au survol */
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .img img,
+    canvas {
+        max-width: 80vw;
+    }
+}
+
+span {
+    cursor: pointer;
+    color : black;
+}
+
+#download {
+    cursor: pointer;
+    color : black;
+}
